@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Isange Bakery – Fresh bread, baked every morning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFBF0; --ink:#2A1A10; --muted:#6B5646; --sun:#F4B43A; --leaf:#1E6B4B; --line:#E4D8C0; --on-sun:#2A1A10;
+  --head:'Bricolage Grotesque','Trebuchet MS',sans-serif; --body:'Figtree','Segoe UI',sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#1B120C; --ink:#FBF1DC; --muted:#C9B79E; --line:#3F2D20; --leaf:#5CC596;}
+}
+:root[data-theme="dark"]{--bg:#1B120C; --ink:#FBF1DC; --muted:#C9B79E; --line:#3F2D20; --leaf:#5CC596;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--leaf);outline-offset:3px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.25rem}
+
+header.hero{background:var(--sun);color:var(--on-sun);padding:1.25rem 0 4rem}
+nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:600}
+nav .logo{font:800 1.2rem var(--head);text-decoration:none}
+nav .links{display:flex;gap:1.25rem}
+nav a{text-decoration:none}
+nav a:hover{text-decoration:underline}
+.hero h1{font:800 clamp(4.5rem,22vw,12rem)/.85 var(--head);letter-spacing:-.04em;margin:3rem 0 1.5rem}
+.hero p{font-size:1.25rem;max-width:28rem;margin:0 0 1.75rem}
+.btn{display:inline-block;background:var(--ink);color:#FFFBF0;padding:.85rem 1.5rem;border-radius:999px;font-weight:600;text-decoration:none}
+.btn:hover{background:var(--leaf)}
+.hero .btn{background:#2A1A10;color:#FFFBF0}
+
+
+.team{background:var(--sun);color:var(--on-sun)}
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:2rem;margin:0;padding:0;list-style:none}
+.people img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;display:block;border-radius:1.5rem 1.5rem 1.5rem 0}
+.people b{display:block;font:800 1.4rem var(--head);margin-top:.75rem}
+.people span{font-size:1rem}
+.fresh{padding-top:0}
+.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.25rem;margin:0;padding:0;list-style:none}
+.shelf li{background:var(--sun);color:var(--on-sun);border-radius:1.5rem 1.5rem 1.5rem 0;padding:.75rem .75rem 1rem;text-align:center}
+.shelf img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:1rem}
+.shelf b{display:block;font:800 1.15rem var(--head);margin-top:.5rem}
+.shop img{width:100%;height:auto;display:block;border-radius:1.5rem 1.5rem 1.5rem 0}
+.shop p{margin:.75rem 0 0;color:var(--muted)}
+.welcome{background:var(--sun);color:var(--on-sun);text-align:center;padding:4rem 0}
+.welcome h2{font-size:clamp(3rem,15vw,8rem);line-height:.9;letter-spacing:-.04em;margin:0 0 1rem}
+.welcome p{margin:0;font-size:1.2rem}
+section{padding:4rem 0}
+h2{font:800 clamp(1.9rem,5vw,2.8rem)/1.05 var(--head);letter-spacing:-.02em;margin:0 0 1.5rem}
+.menu{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.menu li{display:grid;grid-template-columns:1fr auto;gap:.25rem 1rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.menu b{font:800 1.3rem var(--head)}
+.menu span.price{font-weight:600;color:var(--leaf);white-space:nowrap}
+.menu small{grid-column:1/-1;color:var(--muted);font-size:1rem}
+.note{color:var(--muted);font-size:.95rem;margin-top:1rem}
+
+.about{background:var(--leaf);color:#FFFBF0}
+.about .wrap{display:grid;gap:1.5rem;max-width:44rem}
+.about p{margin:0;font-size:1.15rem}
+
+.visit dl{display:grid;grid-template-columns:max-content 1fr;gap:.6rem 1.5rem;margin:0 0 2rem}
+.visit dt{font-weight:600}
+.visit dd{margin:0;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:1.5rem 0;color:var(--muted);font-size:.95rem}
+@media (max-width:520px){nav .links{gap:.9rem;font-size:.95rem}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#top">Isange Bakery</a>
+      <div class="links"><a href="#menu">Menu</a><a href="#about">About</a><a href="#team">Team</a><a href="#visit">Order</a></div>
+    </nav>
+    <h1 id="top">Isange.</h1>
+    <p>“Isange” means make yourself at home. Come in for warm bread, soft mandazi and cakes made for your table.</p>
+    <a class="btn" href="#visit">Order today</a>
+  </div>
+</header>
+
+<main>
+<section id="menu">
+  <div class="wrap">
+    <h2>What’s in the oven</h2>
+    <ul class="menu">
+      <li><b>Fresh bread loaf</b><span class="price">1,500 RWF</span><small>Soft white or brown, baked before sunrise.</small></li>
+      <li><b>Mandazi (5 pieces)</b><span class="price">500 RWF</span><small>Lightly sweet, fried to order.</small></li>
+      <li><b>Croissant</b><span class="price">800 RWF</span><small>Buttery and flaky, plain or with chocolate.</small></li>
+      <li><b>Doughnut</b><span class="price">600 RWF</span><small>Sugar-dusted or glazed.</small></li>
+      <li><b>Meat samosa</b><span class="price">400 RWF</span><small>Crisp outside, spiced beef inside.</small></li>
+      <li><b>Celebration cake</b><span class="price">from 15,000 RWF</span><small>Birthdays, weddings, graduations. Order 2 days ahead.</small></li>
+    </ul>
+    <p class="note">Sample items and prices. Replace them with your own.</p>
+  </div>
+</section>
+
+<section class="fresh" aria-label="Breads and cakes">
+  <div class="wrap">
+    <ul class="shelf">
+      <li><img src="images/pastries.jpg" alt="A plate of pastries, danishes and chocolate swirls" loading="lazy"><b>Assorted pastries</b></li>
+      <li><img src="images/donuts.jpg" alt="Pink glazed doughnuts topped with orange slices" loading="lazy"><b>Glazed doughnuts</b></li>
+      <li><img src="images/cake-donuts.jpg" alt="A tray of plain cake doughnuts" loading="lazy"><b>Cake doughnuts</b></li>
+      </ul>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <h2>Baked here, shared here</h2>
+    <p>Isange Bakery started with one idea: everyone who walks in should feel welcome. We bake in small batches with simple ingredients, so what you take home is still warm.</p>
+    <p>Stop by for your morning bread, or order a cake for the people you love.</p>
+  </div>
+</section>
+
+<section id="team" class="team">
+  <div class="wrap">
+    <h2>The people behind Isange</h2>
+    <ul class="people">
+      <li><figure style="margin:0"><img src="images/ceo.jpg" alt="The CEO of Isange Bakery, seated in a black leather jacket" loading="lazy"><figcaption><b>CEO</b><span>Founder of Isange Bakery</span></figcaption></figure></li>
+      <li><figure style="margin:0"><img src="images/manager.jpg" alt="The manager of Isange Bakery, standing in a blue suit" loading="lazy"><figcaption><b>Manager</b><span>Runs the bakery day to day</span></figcaption></figure></li>
+      <li><figure style="margin:0"><img src="images/chief-money.jpg" alt="Chef in a white uniform holding a freshly baked cake in the kitchen" loading="lazy"><figcaption><b>Chief Money</b><span>Baker, holding a freshly baked sponge cake</span></figcaption></figure></li>
+      <li><figure style="margin:0"><img src="images/chief-justin.jpg" alt="Chef standing behind an oven rack full of cakes and doughnuts" loading="lazy"><figcaption><b>Chief Justin</b><span>Baker, with cakes fresh from the oven</span></figcaption></figure></li>
+      <li><figure style="margin:0"><img src="images/chief-enny.jpg" alt="Chief Enny wearing a colorful patterned chef hat, standing behind an oven rack of cakes" loading="lazy"><figcaption><b>Chief Enny</b><span>Baker, with cakes fresh from the oven</span></figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<section id="shop" class="shop">
+  <div class="wrap">
+    <h2>Our bakery</h2>
+    <img src="images/shop.jpg" alt="The Isange Bakery shop front with a brick-orange facade and large glass windows" loading="lazy">
+    <p>Find us in Nyabisindu village, Muhanga District.</p>
+  </div>
+</section>
+
+<section id="visit" class="visit">
+  <div class="wrap">
+    <h2>Order or visit us</h2>
+    <dl>
+      <dt>Hours</dt><dd>Mon–Sat 6:00–19:00, Sun 7:00–13:00</dd>
+      <dt>Location</dt><dd>Nyabisindu village, Muhanga District. 1.5 km from Muhanga bus park, on the road to Kibuye.</dd>
+      <dt>Phone</dt><dd><a href="tel:+250795070078">+250 795 070 078</a></dd>
+    </dl>
+    <a class="btn" href="https://wa.me/250795070078?text=Hello%20Isange%20Bakery%2C%20I%20would%20like%20to%20order" rel="noopener">Order on WhatsApp</a>
+  </div>
+</section>
+<section class="welcome" aria-label="Welcome">
+  <div class="wrap">
+    <h2>WELCOME!</h2>
+    <p>Isange. Make yourself at home.</p>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Isange Bakery. Baked with care.</div></footer>
+</body>
+</html>
